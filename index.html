@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exported site</title>
+<style>body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}nav{background:#0b4aa0;padding:12px;display:flex;gap:8px;align-items:center}nav button{background:#0d6efd;color:#fff;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}nav select{margin-left:auto;padding:8px;border-radius:6px}.tab{display:none;padding:22px}.active-tab{display:block}.element{position:absolute;border-radius:8px;overflow:hidden}svg{display:block;width:100%;height:100%}a[data-link-wrapper]{display:block;width:100%;height:100%;color:inherit;text-decoration:none}</style>
+</head><body>
+<nav>
+<button onclick="showTab('Home')">Home</button> <button onclick="showTab('Elgoog')">Elgoog</button> <button onclick="showTab('23azo')">23azo</button> <button onclick="showTab('Pizza')">Pizza</button> <button onclick="showTab('Play Mini')">Play Mini</button> <button onclick="showTab('Play Page')">Play Page</button> <button onclick="showTab('Gamezop')">Gamezop</button> <button onclick="showTab('Online Games')">Online Games</button> <button onclick="showTab('Playsaurus')">Playsaurus</button> <button onclick="showTab('Gamepix')">Gamepix</button> <button onclick="showTab('Game Distribution')">Game Distribution</button> <button onclick="showTab('Unity')">Unity</button> <button onclick="showTab('Free Online')">Free Online</button> <button onclick="showTab('Game Monetize')">Game Monetize</button> 
+<select onchange="showTab(this.value)"><option value="Home">Home</option><option value="Elgoog">Elgoog</option><option value="23azo">23azo</option><option value="Pizza">Pizza</option><option value="Play Mini">Play Mini</option><option value="Play Page">Play Page</option><option value="Gamezop">Gamezop</option><option value="Online Games">Online Games</option><option value="Playsaurus">Playsaurus</option><option value="Gamepix">Gamepix</option><option value="Game Distribution">Game Distribution</option><option value="Unity">Unity</option><option value="Free Online">Free Online</option><option value="Game Monetize">Game Monetize</option></select>
+</nav>
+<div id="tab-Home" class="tab active-tab" style="position:relative; min-height:80vh;">
+<div class="element shape" style="left: 5px; top: 6px; width: 1471px; height: 566px; position: absolute; background: transparent; border: none;"><div class="content" style="background: transparent;"><svg viewBox="0 0 100 100" preserveAspectRatio="none" data-shape="true" style="width: 100%; height: 100%; display: block; background: transparent;"><rect x="0" y="0" width="100" height="100" fill="#cbd5e1" rx="0" ry="0"></rect></svg></div></div><div class="element text" style="left: 368px; top: 141px; width: 750px; height: 209px; position: absolute; background: transparent; border: none;"><div class="content" style="font-size: 59px; line-height: 1.6;">Welcome! Knightrage's ARC LIGHTNING 2!</div></div><div class="element text" style="left: 517px; top: 348px; width: 362px; height: 42px; position: absolute; background: transparent; border: none;"><div class="content">Done the way it was supposed to be originally.</div></div>
+</div>
+<div id="tab-Elgoog" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 4px; top: 5px; width: 1482px; height: 559px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;embed-fullscreen-wrapper&quot; style=&quot;position:relative;max-width:100%;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden;background:#000&quot;&gt;
+  &lt;button id=&quot;embed-fullscreen-btn&quot; style=&quot;position:absolute;z-index:40;right:10px;top:10px;padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.9);cursor:pointer&quot;&gt;
+    Fullscreen
+  &lt;/button&gt;
+
+  &lt;iframe
+    id=&quot;embed-iframe&quot;
+    src=&quot;https://elgoog.im/&quot;
+    style=&quot;width:100%;height:100%;border:0;display:block&quot;
+    sandbox=&quot;allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation&quot;
+    allow=&quot;fullscreen; geolocation; microphone; camera&quot;
+    allowfullscreen
+    loading=&quot;lazy&quot;
+    referrerpolicy=&quot;no-referrer&quot;
+    title=&quot;Embedded site&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  (function(){
+    const wrapper = document.getElementById('embed-fullscreen-wrapper');
+    const btn = document.getElementById('embed-fullscreen-btn');
+
+    function isFullscreen() {
+      return document.fullscreenElement === wrapper || document.webkitFullscreenElement === wrapper;
+    }
+
+    function enterFullscreen() {
+      // request fullscreen on wrapper (user gesture required)
+      const req = wrapper.requestFullscreen || wrapper.webkitRequestFullscreen || wrapper.msRequestFullscreen;
+      if (req) req.call(wrapper);
+    }
+
+    function exitFullscreen() {
+      const exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+      if (exit) exit.call(document);
+    }
+
+    btn.addEventListener('click', (e) =&gt; {
+      e.stopPropagation();
+      try {
+        if (!isFullscreen()) enterFullscreen();
+        else exitFullscreen();
+      } catch (err) {
+        console.warn('Fullscreen request failed', err);
+      }
+    });
+
+    // update button text when fullscreen changes
+    document.addEventListener('fullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+    document.addEventListener('webkitfullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+
+    // Optional: double-click wrapper to toggle fullscreen
+    wrapper.addEventListener('dblclick', (e) =&gt; { if (!isFullscreen()) enterFullscreen(); else exitFullscreen(); });
+
+    // Optional: if iframe refused to load (X-Frame-Options), keep a fallback link
+    const iframe = document.getElementById('embed-iframe');
+    iframe.addEventListener('error', () =&gt; {
+      // no cross-origin content access; show link (best-effort)
+      const link = document.createElement('div');
+      link.innerHTML = '&lt;div style=&quot;padding:16px;color:#fff;background:#111;text-align:center&quot;&gt;This site cannot be embedded. &lt;a href=&quot;' + iframe.src + '&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; style=&quot;color:#0bf&quot;&gt;Open in new tab&lt;/a&gt;&lt;/div&gt;';
+      link.style.position = 'absolute'; link.style.inset = '0';
+      wrapper.appendChild(link);
+    });
+  })();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div><div class="element text" style="left: 15px; top: 574px; width: 240px; height: 140px; position: absolute; background: transparent; border: none;"><div class="content">Elgoog.im!</div></div>
+</div>
+<div id="tab-23azo" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 6px; top: 9px; width: 1472px; height: 584px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;!-- Full-size embed wrapper for 23azo.com — paste into your embedder --&gt;
+&lt;div id=&quot;embed-wrap-23azo&quot; style=&quot;position:relative;max-width:100%;width:100%;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden;background:#000;box-sizing:border-box&quot;&gt;
+  &lt;button id=&quot;fs-btn-23azo&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.95);cursor:pointer;font-weight:600&quot;&gt;
+    Fullscreen
+  &lt;/button&gt;
+
+  &lt;iframe id=&quot;embed-iframe-23azo&quot;
+    src=&quot;https://23azo.com/&quot;
+    style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0;display:block;box-sizing:border-box&quot;
+    allow=&quot;fullscreen&quot;
+    allowfullscreen
+    loading=&quot;lazy&quot;
+    referrerpolicy=&quot;no-referrer&quot;
+    title=&quot;Embedded 23azo.com&quot;&gt;
+  &lt;/iframe&gt;
+&lt;script&gt;
+(function(){
+  const wrap = document.getElementById('embed-wrap-23azo');
+  const iframe = document.getElementById('embed-iframe-23azo');
+  const btn = document.getElementById('fs-btn-23azo');
+  const fallback = document.getElementById('embed-fallback-23azo');
+  const link = document.getElementById('embed-link-23azo');
+
+  function isFullscreen(){ return document.fullscreenElement === wrap || document.webkitFullscreenElement === wrap; }
+  function enterFullscreen(){ const fn = wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen; if(fn) fn.call(wrap); }
+  function exitFullscreen(){ const fn = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen; if(fn) fn.call(document); }
+
+  btn.addEventListener('click', (e) =&gt; {
+    e.stopPropagation();
+    try { if (!isFullscreen()) enterFullscreen(); else exitFullscreen(); } catch (err) { console.warn('Fullscreen failed', err); }
+  });
+  document.addEventListener('fullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+  document.addEventListener('webkitfullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+
+  let loaded = false;
+  const timeoutMs = 8000;
+  const t = setTimeout(() =&gt; { if (!loaded) showFallback(); }, timeoutMs);
+
+  iframe.addEventListener('load', () =&gt; { loaded = true; hideFallback(); clearTimeout(t); });
+  iframe.addEventListener('error', () =&gt; { loaded = true; showFallback(); clearTimeout(t); });
+
+  function showFallback(){ fallback.style.display = 'flex'; iframe.style.display = 'none'; btn.style.display = 'none'; }
+  function hideFallback(){ fallback.style.display = 'none'; iframe.style.display = 'block'; btn.style.display = 'inline-block'; }
+
+  try { link.href = iframe.src; } catch(e) {}
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Pizza" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 6px; top: 5px; width: 1467px; height: 567px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;!-- Full-size embed wrapper — iframe fills the container instead of shrinking --&gt;
+&lt;div id=&quot;embed-wrap&quot; style=&quot;position:relative;max-width:100%;width:100%;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden;background:#000;box-sizing:border-box&quot;&gt;
+  &lt;button id=&quot;fs-btn&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.95);cursor:pointer;font-weight:600&quot;&gt;
+    Fullscreen
+  &lt;/button&gt;
+
+  &lt;iframe id=&quot;embed-iframe&quot;
+    src=&quot;https://pizzaedition.win/&quot;
+    style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0;display:block;box-sizing:border-box&quot;
+    allow=&quot;fullscreen&quot;
+    allowfullscreen
+    loading=&quot;lazy&quot;
+    referrerpolicy=&quot;no-referrer&quot;
+    title=&quot;Embedded site&quot;&gt;
+  &lt;/iframe&gt;
+&lt;script&gt;
+(function(){
+  const wrap = document.getElementById('embed-wrap');
+  const iframe = document.getElementById('embed-iframe');
+  const btn = document.getElementById('fs-btn');
+  const fallback = document.getElementById('embed-fallback');
+  const link = document.getElementById('embed-link');
+
+  function isFullscreen(){ return document.fullscreenElement === wrap || document.webkitFullscreenElement === wrap; }
+  function enterFullscreen(){ const fn = wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen; if(fn) fn.call(wrap); }
+  function exitFullscreen(){ const fn = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen; if(fn) fn.call(document); }
+  btn.addEventListener('click', (e)=&gt;{ e.stopPropagation(); try{ if(!isFullscreen()) enterFullscreen(); else exitFullscreen(); }catch(err){console.warn('Fullscreen failed',err);} });
+  document.addEventListener('fullscreenchange', ()=&gt;{ btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+  document.addEventListener('webkitfullscreenchange', ()=&gt;{ btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+
+  let loaded = false;
+  const timeoutMs = 8000;
+  const t = setTimeout(()=&gt;{ if(!loaded) showFallback(); }, timeoutMs);
+
+  iframe.addEventListener('load', ()=&gt;{ loaded = true; hideFallback(); clearTimeout(t); });
+  iframe.addEventListener('error', ()=&gt;{ loaded = true; showFallback(); clearTimeout(t); });
+
+  function showFallback(){ fallback.style.display = 'flex'; iframe.style.display = 'none'; btn.style.display = 'none'; }
+  function hideFallback(){ fallback.style.display = 'none'; iframe.style.display = 'block'; btn.style.display = 'inline-block'; }
+
+  try{ link.href = iframe.src; }catch(e){}
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Play Mini" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 6px; top: 7px; width: 1493px; height: 583px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;!-- Full-size embed wrapper for playminigames.net — paste into your embedder --&gt;
+&lt;div id=&quot;embed-wrap-playminigames&quot; style=&quot;position:relative;max-width:100%;width:100%;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden;background:#000;box-sizing:border-box&quot;&gt;
+  &lt;button id=&quot;fs-btn-playminigames&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px 10px;border-radius:8px;border:0;background:rgba(255,255,255,0.95);cursor:pointer;font-weight:600&quot;&gt;
+    Fullscreen
+  &lt;/button&gt;
+
+  &lt;iframe id=&quot;embed-iframe-playminigames&quot;
+    src=&quot;https://playminigames.net/&quot;
+    style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0;display:block;box-sizing:border-box&quot;
+    allow=&quot;fullscreen&quot;
+    allowfullscreen
+    loading=&quot;lazy&quot;
+    referrerpolicy=&quot;no-referrer&quot;
+    title=&quot;Embedded playminigames.net&quot;&gt;
+  &lt;/iframe&gt;
+&lt;script&gt;
+(function(){
+  const wrap = document.getElementById('embed-wrap-playminigames');
+  const iframe = document.getElementById('embed-iframe-playminigames');
+  const btn = document.getElementById('fs-btn-playminigames');
+  const fallback = document.getElementById('embed-fallback-playminigames');
+  const link = document.getElementById('embed-link-playminigames');
+
+  function isFullscreen(){ return document.fullscreenElement === wrap || document.webkitFullscreenElement === wrap; }
+  function enterFullscreen(){ const fn = wrap.requestFullscreen || wrap.webkitRequestFullscreen || wrap.msRequestFullscreen; if(fn) fn.call(wrap); }
+  function exitFullscreen(){ const fn = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen; if(fn) fn.call(document); }
+
+  btn.addEventListener('click', (e) =&gt; {
+    e.stopPropagation();
+    try { if (!isFullscreen()) enterFullscreen(); else exitFullscreen(); } catch (err) { console.warn('Fullscreen failed', err); }
+  });
+  document.addEventListener('fullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+  document.addEventListener('webkitfullscreenchange', () =&gt; { btn.textContent = isFullscreen() ? 'Exit Fullscreen' : 'Fullscreen'; });
+
+  let loaded = false;
+  const timeoutMs = 8000;
+  const t = setTimeout(() =&gt; { if (!loaded) showFallback(); }, timeoutMs);
+
+  iframe.addEventListener('load', () =&gt; { loaded = true; hideFallback(); clearTimeout(t); });
+  iframe.addEventListener('error', () =&gt; { loaded = true; showFallback(); clearTimeout(t); });
+
+  function showFallback(){ fallback.style.display = 'flex'; iframe.style.display = 'none'; btn.style.display = 'none'; }
+  function hideFallback(){ fallback.style.display = 'none'; iframe.style.display = 'block'; btn.style.display = 'inline-block'; }
+
+  try { link.href = iframe.src; } catch(e) {}
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Play Page" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 0px; top: 6px; width: 1483px; height: 553px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-playpager&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-playpager&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-playpager&quot; src=&quot;https://www.playpager.com/embed/GAME_SLUG&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;Playpager game&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){
+  const btn=document.getElementById('fs-playpager'), wrap=document.getElementById('wrap-playpager');
+  btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+  document.addEventListener('fullscreenchange',()=&gt; btn.textContent = (document.fullscreenElement===wrap) ? 'Exit Fullscreen' : 'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Gamezop" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 6px; top: 6px; width: 1463px; height: 551px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-gamezop&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-gamezop&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-gamezop&quot; src=&quot;https://games.gamezop.com/game/GAME_ID&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;Gamezop game&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){ const btn=document.getElementById('fs-gamezop'), wrap=document.getElementById('wrap-gamezop');
+ btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+ document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Online Games" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 8px; top: 0px; width: 1464px; height: 580px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-onlinegames&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-onlinegames&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-onlinegames&quot; src=&quot;https://onlinegames.io/embed/GAME_SLUG&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;OnlineGames&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){ const btn=document.getElementById('fs-onlinegames'), wrap=document.getElementById('wrap-onlinegames');
+ btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+ document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Playsaurus" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 4px; top: 7px; width: 1421px; height: 567px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;!-- Playsaurus embed — replace GAME_SLUG with the exact slug or embed path given by Playsaurus --&gt;
+&lt;div id=&quot;wrap-playsaurus&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-playsaurus&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-playsaurus&quot;
+    src=&quot;https://playsaurus.com/embed.php?game=GAME_SLUG&quot;
+    style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot;
+    allow=&quot;fullscreen; autoplay&quot;
+    allowfullscreen
+    loading=&quot;lazy&quot;
+    title=&quot;Playsaurus game&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){
+  const btn=document.getElementById('fs-playsaurus'), wrap=document.getElementById('wrap-playsaurus');
+  btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+  document.addEventListener('fullscreenchange',()=&gt; btn.textContent = (document.fullscreenElement===wrap) ? 'Exit Fullscreen' : 'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Gamepix" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 8px; top: 6px; width: 1395px; height: 566px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-gamepix&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-gamepix&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-gamepix&quot; src=&quot;https://www.gamepix.com/play/EXAMPLE_GAME_SLUG&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;GamePix game&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){const btn=document.getElementById('fs-gamepix'),wrap=document.getElementById('wrap-gamepix');
+btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Game Distribution" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 4px; top: 9px; width: 1478px; height: 567px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-gd&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-gd&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-gd&quot; src=&quot;https://www.gamedistribution.com/games/EXAMPLE_GAME_ID/embed&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;GameDistribution&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){const btn=document.getElementById('fs-gd'),wrap=document.getElementById('wrap-gd');
+btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Unity" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 9px; top: 9px; width: 1399px; height: 611px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-unity&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-unity&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-unity&quot; src=&quot;https://play.unity.com/games/EXAMPLE_GAME/embed&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay; webgl&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;Unity Play&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){const btn=document.getElementById('fs-unity'),wrap=document.getElementById('wrap-unity');
+btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Free Online" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 5px; top: 2px; width: 1482px; height: 586px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-fog&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-fog&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-fog&quot; src=&quot;https://www.freeonlinegames.com/game/EXAMPLE_GAME/embed&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;FreeOnlineGames&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){const btn=document.getElementById('fs-fog'),wrap=document.getElementById('wrap-fog');
+btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+<div id="tab-Game Monetize" class="tab" style="position:relative; min-height:80vh;">
+<div class="element embed" style="left: 2px; top: 13px; width: 1436px; height: 587px; position: absolute; background: transparent; border: none;"><div class="content"><iframe srcdoc="&lt;div id=&quot;wrap-gm&quot; style=&quot;position:relative;min-height:520px;height:520px;border:1px solid #e6eef7;border-radius:8px;overflow:hidden&quot;&gt;
+  &lt;button id=&quot;fs-gm&quot; style=&quot;position:absolute;right:10px;top:10px;z-index:40;padding:8px;border-radius:8px;border:0;background:#fff;cursor:pointer&quot;&gt;Fullscreen&lt;/button&gt;
+  &lt;iframe id=&quot;iframe-gm&quot; src=&quot;https://gamemonetize.com/games/EXAMPLE_GAME/embed&quot; style=&quot;position:absolute;inset:0;width:100%;height:100%;border:0&quot; allow=&quot;fullscreen; autoplay&quot; allowfullscreen loading=&quot;lazy&quot; title=&quot;GameMonetize&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function(){const btn=document.getElementById('fs-gm'),wrap=document.getElementById('wrap-gm');
+btn.addEventListener('click',()=&gt;{ if(document.fullscreenElement===wrap) document.exitFullscreen(); else wrap.requestFullscreen(); });
+document.addEventListener('fullscreenchange',()=&gt; btn.textContent=(document.fullscreenElement===wrap)?'Exit Fullscreen':'Fullscreen');
+})();
+&lt;/script&gt;" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" style="width: 100%; height: 100%;"></iframe></div></div>
+</div>
+
+<script>
+function showTab(name){ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active-tab')); var el=document.getElementById('tab-'+name); if(el) el.classList.add('active-tab'); }
+</script>
+</body></html>
